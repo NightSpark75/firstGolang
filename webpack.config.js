@@ -1,7 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 
-var src_dir = path.resolve(__dirname, 'views/assets/js/main.js')
+var src_dir = path.resolve(__dirname, 'views/assets/js/app.js')
 var build_dir = path.resolve(__dirname, 'static/js')
 
 var config = {
@@ -15,10 +15,8 @@ var config = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        include: src_dir,
-        use: {
-          loader: "babel-loader"
-        }
+        include: path.resolve(__dirname, 'views/assets/js/'),
+        loader: 'babel-loader',
       },
       {
         test: /\.css$/,
